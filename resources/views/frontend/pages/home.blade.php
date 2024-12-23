@@ -27,10 +27,16 @@
                         </div>
                         </a>
                     </div>
-                
                 @endforeach
+            </div>
+
+
+            <!-- Pagination Links -->
+            <div class="mt-4"> 
+                {!! $articles->withQueryString()->links('pagination::bootstrap-5') !!}
             </div>
         </div>
     }
     @endif
+    
 @endsection
