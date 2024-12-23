@@ -14,7 +14,6 @@
             <div class="row">
 
                 @foreach ($articles as $article)
-                
                     <div class="col-6 col-lg-4 mb-3">
                         <a href="{{route('single' , $article->slug)}}" style="text-decoration: none">
                         <div class="card" style="width: 18rem;">

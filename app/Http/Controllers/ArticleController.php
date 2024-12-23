@@ -14,10 +14,12 @@ class ArticleController extends Controller
     }
 
     public function singlePage($slug){
-        echo $slug;
+        $articlesCheck = Article::where('slug' , $slug)->first();
+        if($articlesCheck){
+            return view('frontend.pages.single' , compact('articlesCheck'));
+        }else{
+            return abort(404);
+        }
     }
-    
-    
-
 
 }
