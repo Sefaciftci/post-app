@@ -9,12 +9,10 @@ use App\Http\Controllers\Back\DashboardController;
 use App\Http\Controllers\Back\LoginController;
 
 //BACKEND
-//Dashboard 
-Route::get('dashboard' , [DashboardController::class , 'index'])->name('dashboard');
-Route::get('login' , [LoginController::class, 'index'])->name('login');
-Route::post('login' , [LoginController::class , 'loginPost'])->name('login-post');
-Route::get('logout' , [LoginController::class ,'logoutGet'])->name('logout');
-
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('login', [LoginController::class, 'loginPost'])->name('login-post');
+Route::get('logout', [LoginController::class, 'logoutGet'])->name('logout')->middleware('auth');
 
 
 //FRONTEND

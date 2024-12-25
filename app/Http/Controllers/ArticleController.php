@@ -14,7 +14,6 @@ class ArticleController extends Controller
         return view('frontend.pages.home' , compact('articles'));
     }
 
-    
     public function singlePage($slug){
         $articlesCheck = Article::where('slug' , $slug)->first();
         if($articlesCheck){
